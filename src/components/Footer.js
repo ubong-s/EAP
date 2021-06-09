@@ -95,7 +95,7 @@ export const FooterContainer = styled.footer`
 
   @media screen and (min-width: 1024px) {
     grid-template-columns: 1fr 2.5fr 1fr;
-    padding: 3rem 0;
+    padding: 4rem 0;
   }
 
   p {
@@ -112,7 +112,7 @@ export const FooterContainer = styled.footer`
   }
 
   .time {
-    color: ${theme.neutralLight};
+    color: ${theme.textColor};
     margin-top: 2rem;
   }
 
@@ -145,7 +145,7 @@ export const FooterContainer = styled.footer`
         display: flex;
         align-items: center;
         color: ${theme.themeWhite};
-        background-color: ${theme.neutralLight};
+        background-color: ${theme.textColor};
         padding: 0.5rem;
         border-radius: 50%;
 
@@ -170,13 +170,13 @@ export const FooterContainer = styled.footer`
         text-transform: capitalize;
 
         &:hover {
-          color: ${theme.accentColor};
+          color: ${theme.textColor};
           transition: ${theme.transitionEase};
         }
       }
 
       .active {
-        color: ${theme.accentColor};
+        color: ${theme.textColor};
       }
     }
   }

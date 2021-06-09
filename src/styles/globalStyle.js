@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
    
    body {
       line-height: 1.4;
+      background: ${theme.neutralLight};
       
       @media screen and (min-width: 992px) {
          margin-left: 80px;
@@ -33,10 +34,17 @@ export const GlobalStyle = createGlobalStyle`
       font-family: ${theme.fontSecondary};
       color: ${theme.textColor};
       font-size: 0.9rem;
+      margin-bottom: 1rem;
       
       @media screen and (min-width: 992px) {
          font-size: 1rem;
       }
+   }
+
+   blockquote {
+      padding: 1rem 2rem;
+      margin: 0 0 1rem 2rem;
+      border-left: 0.5rem ${theme.primaryColor} solid;
    }
 
    a{
@@ -56,9 +64,17 @@ export const GlobalStyle = createGlobalStyle`
       width: 90%;
       margin: 0 auto;
        
+      /* @media screen and (min-width: 768px) {
+         width: 90%;
+      }
       @media screen and (min-width: 1024px) {
          width: 85%;
-      }
+      } */
+   }
+
+   img {
+      max-width: 100%;
+      margin-bottom: 1rem;
    }
 
    main, footer {
@@ -76,16 +92,16 @@ export const GlobalStyle = createGlobalStyle`
    }
 
    .btn {
-      padding: 0.5rem 1rem;
+      padding: 0.65rem 1rem;
       background: ${theme.accentColor};
       color: ${theme.primaryColor};
       outline: none;
       border: none;
       font-size: 0.9rem;
-      border-radius: 50px;
       cursor: pointer;
       transition: ${theme.transitionEase};
       margin-bottom: 0;
+      text-transform: capitalize;
 
       &:hover {
          background:${theme.primaryColor};
@@ -93,7 +109,7 @@ export const GlobalStyle = createGlobalStyle`
       }
 
       @media screen and (min-width: 1024px) {
-         padding: 1rem 2rem;
+         padding: 0.85rem 1.5rem;
          font-size: 1.15rem;
       }
    }

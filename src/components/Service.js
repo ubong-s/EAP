@@ -36,7 +36,7 @@ export default Service
 
 const ServiceLink = styled(Link)`
   padding: 1.5rem;
-  box-shadow: ${theme.shadow};
+  background-color: ${theme.themeWhite};
 
   .services-card {
     display: flex;
