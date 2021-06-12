@@ -12,7 +12,7 @@ const Navbar = ({ toggleMenu, clickMenu, scrollNav }) => {
       <div className="container">
         <Nav>
           <Link to="/" className="logo">
-            <RiBuilding2Line /> EAP
+            <RiBuilding2Line /> eap
           </Link>
           {/* <NavList>
             {MenuData.map(link => {

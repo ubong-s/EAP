@@ -65,13 +65,13 @@ const Footer = ({ closeMenu }) => {
                   </li>
                 ))}
               </ul>
-              <p>
+              <p className="developer">
                 Developed by{" "}
                 <a
                   target="_blank"
                   rel="noreferrer"
                   href="https://www.devubong.com/"
-                  style={{ color: `${theme.neutralLight}` }}
+                  style={{ color: `${theme.textColor}` }}
                 >
                   {" "}
                   Dev Ubong
@@ -104,7 +104,8 @@ export const FooterContainer = styled.footer`
 
   .phone {
     font-size: 1.25rem;
-    color: ${theme.themeDark};
+    color: ${theme.primaryColor};
+    font-weight: 600;
 
     &:hover {
       color: ${theme.accentColor};
@@ -145,12 +146,12 @@ export const FooterContainer = styled.footer`
         display: flex;
         align-items: center;
         color: ${theme.themeWhite};
-        background-color: ${theme.textColor};
+        background-color: ${theme.primaryColor};
         padding: 0.5rem;
         border-radius: 50%;
 
         &:hover {
-          background-color: ${theme.themeDark};
+          background-color: ${theme.accentColor};
           transition: ${theme.transitionEase};
         }
       }
@@ -165,19 +166,23 @@ export const FooterContainer = styled.footer`
 
     li {
       a {
-        color: ${theme.themeDark};
+        color: ${theme.primaryColor};
         cursor: pointer;
         text-transform: capitalize;
 
         &:hover {
-          color: ${theme.textColor};
+          opacity: 0.5;
           transition: ${theme.transitionEase};
         }
       }
 
       .active {
-        color: ${theme.textColor};
+        opacity: 0.5;
       }
     }
+  }
+
+  .developer {
+    font-family: ${theme.fontPrimary};
   }
 `

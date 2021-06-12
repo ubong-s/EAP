@@ -27,7 +27,6 @@ export const GlobalStyle = createGlobalStyle`
 
    h1, h2, h3, h4, h5, h6 {
       color: ${theme.primaryColor};
-      font-weight: 400;
    }
    
    p {
@@ -37,7 +36,7 @@ export const GlobalStyle = createGlobalStyle`
       margin-bottom: 1rem;
       
       @media screen and (min-width: 992px) {
-         font-size: 1rem;
+         font-size: 0.95rem;
       }
    }
 
@@ -113,4 +112,8 @@ export const GlobalStyle = createGlobalStyle`
          font-size: 1.15rem;
       }
    }
+
+   
+
+   
 `

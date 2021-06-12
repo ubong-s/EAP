@@ -5,42 +5,56 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { theme } from "../styles/theme"
 
-const Service = ({ strapiId, title, image, description, slug }) => {
+const Blog = ({ strapiId, title, featuredImage, description, slug, date }) => {
   return (
-    <ServiceLink to={`/services/${slug}`}>
+    <BlogLink to={`/blog/${slug}`}>
       <article>
         <GatsbyImage
-          image={image.localFile.childImageSharp.gatsbyImageData}
-          alt={image.alternativeText}
+          image={featuredImage.localFile.childImageSharp.gatsbyImageData}
+          alt={featuredImage.alternativeText}
         />
-        <div className="services-card">
+        <div className="blogs-card">
           <h4>{title}</h4>
           <p>
-            {`${description}`.substring(0, 125)}
+            {`${description}`.substring(0, 200)}...
             <span className="more">read more</span>
           </p>
         </div>
       </article>
-    </ServiceLink>
+    </BlogLink>
   )
 }
 
-Service.propTypes = {
+Blog.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  image: PropTypes.object.isRequired,
+  featuredImage: PropTypes.object.isRequired,
   slug: PropTypes.string.isRequired,
 }
 
-export default Service
+export default Blog
 
-const ServiceLink = styled(Link)`
+const BlogLink = styled(Link)`
   padding: 1.5rem;
   background-color: ${theme.themeWhite};
 
-  .services-card {
+  article {
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    @media screen and (min-width: 1100px) {
+      grid-template-columns: 1fr 3fr;
+    }
+  }
+
+  .blogs-card {
     display: flex;
     flex-direction: column;
+    transition: ${theme.transitionEase};
 
     h4 {
       margin: 1.25rem 0 0.75rem;
@@ -48,13 +62,22 @@ const ServiceLink = styled(Link)`
     }
 
     p {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0;
       line-height: 1.6;
     }
 
     .more {
-      margin-left: 0.25rem;
+      display: block;
+      text-transform: capitalize;
+      margin-top: 0.5rem;
       color: ${theme.primaryColor};
+    }
+
+    @media screen and (min-width: 768px) {
+      h4 {
+        margin: 0 0 0.5rem;
+        /* font-size: 1.25rem; */
+      }
     }
   }
 
@@ -62,7 +85,7 @@ const ServiceLink = styled(Link)`
     background: ${theme.primaryColor};
     transition: ${theme.transitionEase};
 
-    .services-card {
+    .blogs-card {
       h4 {
         color: ${theme.accentColor};
       }
