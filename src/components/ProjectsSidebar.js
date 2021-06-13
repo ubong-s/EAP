@@ -6,7 +6,7 @@ import { RiBuilding2Line } from "react-icons/ri"
 import { BiChevronsRight } from "react-icons/bi"
 import FollowUs from "./FollowUs"
 
-const BlogSidebar = () => {
+const ProjectsSidebar = () => {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -14,7 +14,7 @@ const BlogSidebar = () => {
           description
         }
       }
-      allStrapiBlogs(limit: 5, sort: { order: DESC, fields: date }) {
+      allStrapiProjects {
         nodes {
           title
           description
@@ -32,7 +32,7 @@ const BlogSidebar = () => {
 
       <SidebarArticles>
         <h4>Recent Articles</h4>
-        {data.allStrapiBlogs.nodes.map(item => {
+        {data.allStrapiProjects.nodes.map(item => {
           return (
             <Link to={`/blog/${item.slug}`} className="sidebar-link">
               {item.title} {">>"}
@@ -45,7 +45,7 @@ const BlogSidebar = () => {
   )
 }
 
-export default BlogSidebar
+export default ProjectsSidebar
 
 const SidebarWrap = styled.div`
   display: none;

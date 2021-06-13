@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { theme } from "../styles/theme"
 
-export const PostNavigator = ({ pageContext }) => {
+export const ProjectNavigator = ({ pageContext }) => {
   const { previous, next } = pageContext
   console.log(pageContext)
 
@@ -11,14 +11,14 @@ export const PostNavigator = ({ pageContext }) => {
     <Navigator>
       <li className="prev">
         {previous && (
-          <Link to={`/blog/${previous.slug}`} rel="prev">
+          <Link to={`/projects/${previous.slug}`} rel="prev">
             ← {previous.title}
           </Link>
         )}
       </li>
       <li className="next">
         {next && (
-          <Link to={`/blog/${next.slug}`} rel="next">
+          <Link to={`/projects/${next.slug}`} rel="next">
             {next.title} →
           </Link>
         )}

@@ -3,7 +3,7 @@ export const theme = {
   fontSecondary: `'Source Sans Pro', sans-erif`,
   primaryColor: "#154734",
   secondaryColor: "#691017",
-  textColor: "#444",
+  textColor: "#222",
   neutralDark: "#000",
   neutralLight: "#f3f3f3",
   neutralLight2: "#ececec",

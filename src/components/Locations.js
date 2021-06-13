@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { theme } from "../styles/theme"
-import socialData from "../constants/socials"
+import FollowUs from "./FollowUs"
 
 const Locations = () => {
   return (
@@ -30,18 +30,7 @@ const Locations = () => {
       </ContactLocationsBox>
       {/* <!-- single location end--> */}
 
-      <ContactLocationsSocial>
-        <h4>Follow us</h4>
-        <ul>
-          {socialData.map((item, index) => (
-            <li>
-              <a href={item.link} target="_blank" rel="noreferrer">
-                {item.icon}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </ContactLocationsSocial>
+      <FollowUs />
     </ContactLocations>
   )
 }
@@ -82,29 +71,6 @@ const ContactLocationsBox = styled.div`
 
     &:hover {
       color: ${theme.primaryColor};
-    }
-  }
-`
-const ContactLocationsSocial = styled.div`
-  display: flex;
-  margin-top: 2rem;
-  gap: 2rem;
-
-  h4 {
-    font-size: 18px;
-  }
-
-  ul {
-    display: flex;
-    gap: 1.5rem;
-  }
-
-  a {
-    color: ${theme.primaryColor};
-    font-size: 1.25rem;
-
-    &:hover {
-      color: ${theme.accentColor};
     }
   }
 `

@@ -113,7 +113,9 @@ export const GlobalStyle = createGlobalStyle`
       }
    }
 
-   
+   .logo {
+      font-weight: bold;
+   }
 
    
 `

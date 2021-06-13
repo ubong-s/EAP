@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import Blog from "./Blog"
 import BlogSidebar from "./BlogSidebar"
-import { theme } from "../styles/theme"
 
 const BlogsComp = ({ blogs }) => {
   return (
