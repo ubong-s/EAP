@@ -53,5 +53,11 @@ const Navigator = styled.ul`
     color: ${theme.themeWhite};
     padding: 0.7rem 1rem;
     font-size: 12.5px;
+
+    &:hover {
+      background: ${theme.accentColor};
+      color: ${theme.primaryColor};
+      transition: ${theme.transitionEase};
+    }
   }
 `

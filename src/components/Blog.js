@@ -7,7 +7,7 @@ import { theme } from "../styles/theme"
 
 const Blog = ({ strapiId, title, featuredImage, description, slug, date }) => {
   return (
-    <BlogLink to={`/blog/${slug}`}>
+    <BlogLink to={`/blog/${slug}`} key={strapiId}>
       <article>
         <GatsbyImage
           image={featuredImage.localFile.childImageSharp.gatsbyImageData}

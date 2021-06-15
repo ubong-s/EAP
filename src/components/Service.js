@@ -7,7 +7,7 @@ import { theme } from "../styles/theme"
 
 const Service = ({ strapiId, title, image, description, slug }) => {
   return (
-    <ServiceLink to={`/services/${slug}`}>
+    <ServiceLink to={`/services/${slug}`} key={strapiId}>
       <article>
         <GatsbyImage
           image={image.localFile.childImageSharp.gatsbyImageData}

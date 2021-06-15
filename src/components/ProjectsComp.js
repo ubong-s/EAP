@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import Project from "./Project"
-import ProjectsSidebar from "./ProjectsSidebar"
 
 const ProjectsComp = ({ projects }) => {
   return (
@@ -9,10 +8,9 @@ const ProjectsComp = ({ projects }) => {
       <ProjectsContainer>
         <ProjectsGrid>
           {projects.map(project => {
-            return <Project key={project.strapiId} {...project} />
+            return <Project {...project} />
           })}
         </ProjectsGrid>
-        <ProjectsSidebar />
       </ProjectsContainer>
     </div>
   )
@@ -22,10 +20,6 @@ export default ProjectsComp
 
 const ProjectsContainer = styled.section`
   @media screen and (min-width: 1024px) {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 2rem;
-    align-items: flex-start;
   }
 `
 
@@ -34,6 +28,10 @@ const ProjectsGrid = styled.div`
   grid-template-columns: 1fr;
   gap: 2rem;
 
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
   @media screen and (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 `

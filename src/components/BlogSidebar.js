@@ -3,7 +3,6 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 import { theme } from "../styles/theme"
 import { RiBuilding2Line } from "react-icons/ri"
-import { BiChevronsRight } from "react-icons/bi"
 import FollowUs from "./FollowUs"
 
 const BlogSidebar = () => {
@@ -16,6 +15,7 @@ const BlogSidebar = () => {
       }
       allStrapiBlogs(limit: 5, sort: { order: DESC, fields: date }) {
         nodes {
+          strapiId
           title
           description
           slug
@@ -34,7 +34,11 @@ const BlogSidebar = () => {
         <h4>Recent Articles</h4>
         {data.allStrapiBlogs.nodes.map(item => {
           return (
-            <Link to={`/blog/${item.slug}`} className="sidebar-link">
+            <Link
+              to={`/blog/${item.slug}`}
+              key={item.strapiId}
+              className="sidebar-link"
+            >
               {item.title} {">>"}
             </Link>
           )
@@ -48,6 +52,8 @@ const BlogSidebar = () => {
 export default BlogSidebar
 
 const SidebarWrap = styled.div`
+  position: sticky;
+  top: 25px;
   display: none;
 
   .logo {

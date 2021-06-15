@@ -24,12 +24,13 @@ export const query = graphql`
   {
     allStrapiProjects {
       nodes {
+        title
         slug
         strapiId
-        image {
+        featuredImage {
           localFile {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
         }

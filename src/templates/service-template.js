@@ -134,6 +134,8 @@ const ServiceWrap = styled.div`
 `
 const ServicesMenu = styled.div`
   display: none;
+  position: sticky;
+  top: 25px;
 
   @media screen and (min-width: 768px) {
     display: grid;

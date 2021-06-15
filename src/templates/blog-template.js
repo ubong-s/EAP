@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { theme } from "../styles/theme"
 import styled from "styled-components"
@@ -11,7 +11,7 @@ import ReactMarkdown from "react-markdown"
 import { PostNavigator } from "../components/PostNavigator"
 
 const blogTemplate = ({ data, pageContext }) => {
-  const { content, title, description, featuredImage, date, slug } = data.blog
+  const { content, title, description, featuredImage, date } = data.blog
   const featImage = featuredImage.localFile.publicURL
   return (
     <Layout>
@@ -21,13 +21,17 @@ const blogTemplate = ({ data, pageContext }) => {
         <BlogWrap>
           <BlogContent>
             <article>
-              <GatsbyImage
-                className="blog-img"
-                image={featuredImage.localFile.childImageSharp.gatsbyImageData}
-                alt={featuredImage.alternativeText}
-              />
+              <ImageWrap>
+                <GatsbyImage
+                  className="blog-img"
+                  image={
+                    featuredImage.localFile.childImageSharp.gatsbyImageData
+                  }
+                  alt={featuredImage.alternativeText}
+                />
+                <p>{date}</p>
+              </ImageWrap>
               <h2>{title}</h2>
-              <p className="time">{date}</p>
               <ReactMarkdown children={content} />
               <PostNavigator pageContext={pageContext} />
             </article>
@@ -82,14 +86,30 @@ const BlogContent = styled.div`
     margin: 2rem 0 0.5rem;
   }
 
-  .time {
-    margin-bottom: 2rem;
-    font-family: ${theme.fontPrimary};
-    color: ${theme.textColor};
-    opacity: 0.7;
-  }
-
   .blog-img {
     margin-bottom: 2rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 2rem;
+  }
+`
+
+const ImageWrap = styled.div`
+  position: relative;
+  line-height: 0;
+
+  .project-img {
+    margin-bottom: 2rem;
+  }
+
+  p {
+    position: absolute;
+    font-family: ${theme.fontPrimary};
+    padding: 1.25rem;
+    background: ${theme.accentColor};
+    color: ${theme.primaryColor};
+    top: 0;
+    left: 0;
   }
 `

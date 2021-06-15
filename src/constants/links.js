@@ -13,7 +13,7 @@ const MenuLinks = [
   },
   {
     id: 3,
-    text: "our services",
+    text: "services",
     url: "/services/",
     icon: null,
     subs: [

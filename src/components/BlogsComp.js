@@ -9,7 +9,7 @@ const BlogsComp = ({ blogs }) => {
       <BlogsContainer>
         <BlogsGrid>
           {blogs.map(blog => {
-            return <Blog key={blog.strapiId} {...blog} />
+            return <Blog {...blog} />
           })}
         </BlogsGrid>
         <BlogSidebar />

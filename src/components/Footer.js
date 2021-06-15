@@ -91,7 +91,7 @@ export const FooterContainer = styled.footer`
   background-color: ${theme.themeWhite};
   color: ${theme.themeDark};
   padding: 3rem 3rem 3rem 0;
-  font-size: 14px;
+  font-size: 16px;
 
   @media screen and (min-width: 1024px) {
     grid-template-columns: 1fr 2.5fr 1fr;

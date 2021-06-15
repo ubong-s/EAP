@@ -27,17 +27,16 @@ export const GlobalStyle = createGlobalStyle`
 
    h1, h2, h3, h4, h5, h6 {
       color: ${theme.primaryColor};
+      letter-spacing: 1px;
+      font-weight: bold;
    }
    
    p {
       font-family: ${theme.fontSecondary};
       color: ${theme.textColor};
-      font-size: 0.9rem;
       margin-bottom: 1rem;
       
-      @media screen and (min-width: 992px) {
-         font-size: 0.95rem;
-      }
+     
    }
 
    blockquote {
@@ -101,6 +100,7 @@ export const GlobalStyle = createGlobalStyle`
       transition: ${theme.transitionEase};
       margin-bottom: 0;
       text-transform: capitalize;
+      font-weight: bold;
 
       &:hover {
          background:${theme.primaryColor};

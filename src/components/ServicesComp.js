@@ -7,7 +7,7 @@ const ServicesComp = ({ services, showLink }) => {
     <div className="container">
       <ServicesGrid>
         {services.map(service => {
-          return <Service key={service.strapiId} {...service} />
+          return <Service {...service} />
         })}
       </ServicesGrid>
     </div>

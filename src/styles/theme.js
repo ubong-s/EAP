@@ -1,5 +1,5 @@
 export const theme = {
-  fontPrimary: `'Montaga', sans-erif`,
+  fontPrimary: `'Russo One', sans-serif`,
   fontSecondary: `'Source Sans Pro', sans-erif`,
   primaryColor: "#154734",
   secondaryColor: "#691017",

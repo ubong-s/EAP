@@ -9,7 +9,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     query {
-      allStrapiBlogs {
+      allStrapiBlogs(sort: { fields: date, order: DESC }, limit: 1000) {
         nodes {
           title
           slug
@@ -30,11 +30,14 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
 
   // Create blog pages
   const blogs = result.data.allStrapiBlogs.nodes
+  const blogsPerPage = 6
+  const blogPages = Math.ceil(blogs.length / blogsPerPage)
 
   blogs.forEach((blog, index) => {
     const previous = index === 0 ? null : blogs[index - 1]
@@ -47,6 +50,19 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: blog.slug,
         previous,
         next,
+      },
+    })
+  })
+
+  Array.from({ length: blogPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+      component: path.resolve("src/templates/blog-list-template.js"),
+      context: {
+        limit: blogsPerPage,
+        skip: i * blogsPerPage,
+        blogPages,
+        currentPage: i + 1,
       },
     })
   })

@@ -5,7 +5,6 @@ import { theme } from "../styles/theme"
 
 export const PostNavigator = ({ pageContext }) => {
   const { previous, next } = pageContext
-  console.log(pageContext)
 
   return (
     <Navigator>
@@ -52,6 +51,12 @@ const Navigator = styled.ul`
     background: ${theme.primaryColor};
     color: ${theme.themeWhite};
     padding: 0.7rem 1rem;
-    font-size: 12.5px;
+    font-size: 12px;
+
+    &:hover {
+      background: ${theme.accentColor};
+      color: ${theme.primaryColor};
+      transition: ${theme.transitionEase};
+    }
   }
 `

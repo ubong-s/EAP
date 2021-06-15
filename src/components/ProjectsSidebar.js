@@ -3,7 +3,6 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 import { theme } from "../styles/theme"
 import { RiBuilding2Line } from "react-icons/ri"
-import { BiChevronsRight } from "react-icons/bi"
 import FollowUs from "./FollowUs"
 
 const ProjectsSidebar = () => {
@@ -17,7 +16,7 @@ const ProjectsSidebar = () => {
       allStrapiProjects {
         nodes {
           title
-          description
+          details
           slug
         }
       }
@@ -31,7 +30,7 @@ const ProjectsSidebar = () => {
       <p>{data.site.siteMetadata.description}</p>
 
       <SidebarArticles>
-        <h4>Recent Articles</h4>
+        <h4>Other Projects</h4>
         {data.allStrapiProjects.nodes.map(item => {
           return (
             <Link to={`/blog/${item.slug}`} className="sidebar-link">
@@ -48,6 +47,8 @@ const ProjectsSidebar = () => {
 export default ProjectsSidebar
 
 const SidebarWrap = styled.div`
+  position: sticky;
+  top: 25px;
   display: none;
 
   .logo {

@@ -9,7 +9,7 @@ const FollowUs = () => {
       <h4>Follow us</h4>
       <ul>
         {socialData.map((item, index) => (
-          <li>
+          <li key={index}>
             <a href={item.link} target="_blank" rel="noreferrer">
               {item.icon}
             </a>
