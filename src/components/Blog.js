@@ -5,14 +5,25 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { theme } from "../styles/theme"
 
-const Blog = ({ strapiId, title, featuredImage, description, slug, date }) => {
+const Blog = ({
+  strapiId,
+  title,
+  featuredImage,
+  description,
+  slug,
+  date,
+  grid,
+}) => {
   return (
     <BlogLink to={`/blog/${slug}`} key={strapiId}>
       <article>
-        <GatsbyImage
-          image={featuredImage.localFile.childImageSharp.gatsbyImageData}
-          alt={featuredImage.alternativeText}
-        />
+        <ImageWrap grid={grid}>
+          <GatsbyImage
+            image={featuredImage.localFile.childImageSharp.gatsbyImageData}
+            alt={title}
+          />
+          <p className="date">{date}</p>
+        </ImageWrap>
         <div className="blogs-card">
           <h4>{title}</h4>
           <p>
@@ -40,14 +51,14 @@ const BlogLink = styled(Link)`
 
   article {
     @media screen and (min-width: 768px) {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
+      display: ${({ grid }) => (grid ? `block` : "grid")};
+      grid-template-columns: ${({ grid }) => (grid ? `` : "1fr 2fr")};
       gap: 1.5rem;
       align-items: center;
     }
 
     @media screen and (min-width: 1100px) {
-      grid-template-columns: 1fr 3fr;
+      grid-template-columns: ${({ grid }) => (grid ? `` : "1fr 3fr")};
     }
   }
 
@@ -67,7 +78,7 @@ const BlogLink = styled(Link)`
     }
 
     .more {
-      display: block;
+      display: ${({ grid }) => (grid ? `1fr 3fr` : "")};
       text-transform: capitalize;
       margin-top: 0.5rem;
       color: ${theme.primaryColor};
@@ -98,5 +109,21 @@ const BlogLink = styled(Link)`
         color: ${theme.accentColor};
       }
     }
+  }
+`
+
+const ImageWrap = styled.div`
+  position: relative;
+  line-height: 0;
+  margin-bottom: ${({ grid }) => (grid ? `1.5rem` : "")};
+
+  p {
+    position: absolute;
+    font-family: ${theme.fontPrimary};
+    padding: 1rem;
+    background: ${theme.accentColor};
+    color: ${theme.primaryColor};
+    top: 0;
+    left: 0;
   }
 `

@@ -10,12 +10,13 @@ const BlogList = ({
   data: {
     allStrapiBlogs: { nodes: allBlogs },
   },
+  pageContext,
 }) => {
   return (
     <Layout>
       <Seo title="Blog" description="This is the Blog page" />
       <PageHero title="Blog" backgroundImg={BlogHero} />
-      <BlogsComp blogs={allBlogs} />
+      <BlogsComp blogs={allBlogs} pageContext={pageContext} />
     </Layout>
   )
 }
@@ -40,7 +41,7 @@ export const query = graphql`
             }
           }
         }
-        date
+        date(formatString: "MMM Do ")
       }
     }
   }

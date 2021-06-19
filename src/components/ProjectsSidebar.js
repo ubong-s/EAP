@@ -33,7 +33,7 @@ const ProjectsSidebar = () => {
         <h4>Other Projects</h4>
         {data.allStrapiProjects.nodes.map(item => {
           return (
-            <Link to={`/blog/${item.slug}`} className="sidebar-link">
+            <Link to={`/projects/${item.slug}`} className="sidebar-link">
               {item.title} {">>"}
             </Link>
           )

@@ -9,11 +9,13 @@ const Project = ({ strapiId, title, featuredImage, slug }) => {
   return (
     <ProjectLink to={`/projects/${slug}`} key={strapiId}>
       <article>
-        <GatsbyImage
-          image={featuredImage.localFile.childImageSharp.gatsbyImageData}
-          alt={title}
-        />
-        <h4>{title}</h4>
+        <div className="img">
+          <GatsbyImage
+            image={featuredImage.localFile.childImageSharp.gatsbyImageData}
+            alt={title}
+          />
+          <h4>{title}</h4>
+        </div>
       </article>
     </ProjectLink>
   )
@@ -30,30 +32,54 @@ export default Project
 const ProjectLink = styled(Link)`
   text-align: center;
 
-  img {
-    padding: 1.5rem;
+  article {
     background-color: ${theme.themeWhite};
+    padding: 1.25rem;
+  }
+
+  .img {
+    position: relative;
+
+    z-index: 2;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 1)
+      );
+      transition: ${theme.transitionEase};
+    }
   }
 
   h4 {
-    display: inline-block;
-    padding: 0.75rem 1rem;
-    background-color: ${theme.themeWhite};
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 1.25rem;
-    border-top: 1px solid ${theme.neurtralLighter};
+    position: absolute;
+    font-size: 1rem;
+    left: 1.25rem;
+    bottom: 1rem;
+    z-index: 3;
+    color: ${theme.themeWhite};
+    text-align: left;
   }
 
   &:hover {
-    img {
-      background: ${theme.primaryColor};
+    .img {
       transition: ${theme.transitionEase};
-    }
-
-    h4 {
-      background: ${theme.primaryColor};
-      color: ${theme.themeWhite};
+      &::after {
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.8),
+          rgba(255, 255, 255, 0),
+          rgba(0, 0, 0, 0.8)
+        );
+      }
     }
   }
 `

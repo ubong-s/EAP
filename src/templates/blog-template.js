@@ -29,7 +29,7 @@ const blogTemplate = ({ data, pageContext }) => {
                   }
                   alt={featuredImage.alternativeText}
                 />
-                <p>{date}</p>
+                <p className="date">{date}</p>
               </ImageWrap>
               <h2>{title}</h2>
               <ReactMarkdown children={content} />

@@ -28,15 +28,14 @@ export const GlobalStyle = createGlobalStyle`
    h1, h2, h3, h4, h5, h6 {
       color: ${theme.primaryColor};
       letter-spacing: 1px;
-      font-weight: bold;
+      font-weight:700;
+      margin-bottom: 0.5rem;
    }
    
    p {
       font-family: ${theme.fontSecondary};
       color: ${theme.textColor};
       margin-bottom: 1rem;
-      
-     
    }
 
    blockquote {
@@ -81,11 +80,11 @@ export const GlobalStyle = createGlobalStyle`
    }
 
    section {
-      padding: 4rem 0;
+      padding: 4.5rem 0;
       
      
      @media screen and (min-width: 1024px) {
-         padding: 6rem 0;
+         padding: 7rem 0;
       }
    }
 
@@ -100,7 +99,7 @@ export const GlobalStyle = createGlobalStyle`
       transition: ${theme.transitionEase};
       margin-bottom: 0;
       text-transform: capitalize;
-      font-weight: bold;
+      font-weight: 700;
 
       &:hover {
          background:${theme.primaryColor};
@@ -113,8 +112,8 @@ export const GlobalStyle = createGlobalStyle`
       }
    }
 
-   .logo {
-      font-weight: bold;
+   .logo, .date {
+      font-weight: 700;
    }
 
    

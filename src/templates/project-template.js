@@ -38,7 +38,7 @@ const projectTemplate = ({ data, pageContext }) => {
                   }
                   alt={title}
                 />
-                <p>{date}</p>
+                <p className="date">{date}</p>
               </ImageWrap>
               <ProjectInfo>
                 <h3>Project Details</h3>
@@ -166,6 +166,8 @@ const ProjectInfo = styled.div`
 `
 
 const ProjectInfoGrid = styled.div`
+  padding: 1rem 0;
+
   @media screen and (min-width: 1024px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

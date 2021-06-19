@@ -6,23 +6,28 @@ import ProjectsHero from "../images/pageHero/projects.jpg"
 import Seo from "../components/SEO"
 import ProjectsComp from "../components/ProjectsComp"
 
-const Projects = ({
+const ProjectsList = ({
   data: {
     allStrapiProjects: { nodes: allProjects },
   },
+  pageContext,
 }) => {
   return (
     <Layout>
       <Seo title="Projects" description="This is our Projects page" />
       <PageHero title="Projects" backgroundImg={ProjectsHero} />
-      <ProjectsComp projects={allProjects} />
+      <ProjectsComp projects={allProjects} pageContext={pageContext} />
     </Layout>
   )
 }
 
 export const query = graphql`
-  {
-    allStrapiProjects {
+  query projectListQuery($skip: Int, $limit: Int) {
+    allStrapiProjects(
+      sort: { fields: date, order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       nodes {
         title
         slug
@@ -38,4 +43,4 @@ export const query = graphql`
     }
   }
 `
-export default Projects
+export default ProjectsList

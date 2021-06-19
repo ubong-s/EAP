@@ -1,9 +1,9 @@
 export const theme = {
-  fontPrimary: `'Russo One', sans-serif`,
-  fontSecondary: `'Source Sans Pro', sans-erif`,
+  fontPrimary: `'Nunito', sans-serif`,
+  fontSecondary: `'Nunito', sans-erif`,
   primaryColor: "#154734",
   secondaryColor: "#691017",
-  textColor: "#222",
+  textColor: "#333",
   neutralDark: "#000",
   neutralLight: "#f3f3f3",
   neutralLight2: "#ececec",
@@ -11,6 +11,7 @@ export const theme = {
   themeWhite: "#FFF",
   themeDark: "#04150C",
   accentColor: "#FFD03E",
-  transitionEase: "all 0.3s ease",
+  transitionEase: "all 0.3s ease-in-out",
+  transitionEase1: "all 0.5s ease-in-out",
   shadow: "5px 5px 20px 0 rgb(0 0 0 / 6%)",
 }

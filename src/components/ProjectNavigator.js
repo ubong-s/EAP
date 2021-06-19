@@ -28,7 +28,7 @@ export const ProjectNavigator = ({ pageContext }) => {
 }
 
 const Navigator = styled.ul`
-  margin: 40px 0;
+  margin: 40px 0 0;
   padding: 0;
 
   .prev {

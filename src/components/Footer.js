@@ -71,10 +71,9 @@ const Footer = ({ closeMenu }) => {
                   target="_blank"
                   rel="noreferrer"
                   href="https://www.devubong.com/"
-                  style={{ color: `${theme.textColor}` }}
                 >
                   {" "}
-                  Dev Ubong
+                  DevUbong
                 </a>
               </p>
             </div>
@@ -105,7 +104,6 @@ export const FooterContainer = styled.footer`
   .phone {
     font-size: 1.25rem;
     color: ${theme.primaryColor};
-    font-weight: 600;
 
     &:hover {
       color: ${theme.accentColor};
@@ -184,5 +182,13 @@ export const FooterContainer = styled.footer`
 
   .developer {
     font-family: ${theme.fontPrimary};
+
+    a {
+      color: ${theme.primaryColor};
+
+      &:hover {
+        color: ${theme.accentColor};
+      }
+    }
   }
 `

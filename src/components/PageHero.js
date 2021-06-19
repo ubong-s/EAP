@@ -48,8 +48,8 @@ const PageHeroWrapper = styled.div`
     &::after {
       background: linear-gradient(
         to right,
-        rgba(255, 208, 62, 0.1),
-        rgba(0, 0, 0, 1)
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.7)
       );
     }
   }

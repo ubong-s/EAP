@@ -57,8 +57,8 @@ const MenuLinks = [
   },
   {
     id: 6,
-    text: "news",
-    url: "/contact/",
+    text: "partners",
+    url: "/partners/",
     icon: null,
   },
   {

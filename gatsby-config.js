@@ -54,14 +54,21 @@ module.exports = {
       options: {
         apiURL: `http://localhost:1337`,
         queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`blogs`, `projects`, `partners`, `services`],
+        collectionTypes: [
+          `blogs`,
+          `projects`,
+          `partners`,
+          `services`,
+          `teams`,
+          `jobs`,
+        ],
         // singleTypes: [`home-page`, `contact`],
       },
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`russo one\:400`, `source sans pro\:300,400,600,700`],
+        fonts: [`russo one\:400`, `pt sans\:300,400,600,700`],
         display: "swap",
       },
     },

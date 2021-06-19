@@ -8,9 +8,9 @@ const CallToAction = ({ title, buttonText, backgroundImg }) => {
     <CallWrap backgroundImg={backgroundImg}>
       <div className="container">
         <CallContent>
-          <h3 className="title">{title}</h3>
+          <h3 className="title">{title ? title : "In need of our services"}</h3>
           <Link to="/contact" className="btn">
-            {buttonText}
+            {buttonText ? buttonText : "Contact Us"}
           </Link>
         </CallContent>
       </div>
