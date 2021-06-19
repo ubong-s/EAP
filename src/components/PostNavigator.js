@@ -3,21 +3,21 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { theme } from "../styles/theme"
 
-export const PostNavigator = ({ pageContext }) => {
+export const PostNavigator = ({ pageContext, subLink }) => {
   const { previous, next } = pageContext
 
   return (
     <Navigator>
       <li className="prev">
         {previous && (
-          <Link to={`/blog/${previous.slug}`} rel="prev">
+          <Link to={`/${subLink}/${previous.slug}`} rel="prev">
             ← {previous.title}
           </Link>
         )}
       </li>
       <li className="next">
         {next && (
-          <Link to={`/blog/${next.slug}`} rel="next">
+          <Link to={`/${subLink}/${next.slug}`} rel="next">
             {next.title} →
           </Link>
         )}
@@ -51,7 +51,7 @@ const Navigator = styled.ul`
     background: ${theme.primaryColor};
     color: ${theme.themeWhite};
     padding: 0.7rem 1rem;
-    font-size: 12px;
+    font-size: 14px;
 
     &:hover {
       background: ${theme.accentColor};

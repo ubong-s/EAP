@@ -28,7 +28,7 @@ export const GlobalStyle = createGlobalStyle`
    h1, h2, h3, h4, h5, h6 {
       color: ${theme.primaryColor};
       letter-spacing: 1px;
-      font-weight:700;
+      font-weight:800;
       margin-bottom: 0.5rem;
    }
    
@@ -99,7 +99,7 @@ export const GlobalStyle = createGlobalStyle`
       transition: ${theme.transitionEase};
       margin-bottom: 0;
       text-transform: capitalize;
-      font-weight: 700;
+      font-weight: 800;
 
       &:hover {
          background:${theme.primaryColor};
@@ -107,13 +107,13 @@ export const GlobalStyle = createGlobalStyle`
       }
 
       @media screen and (min-width: 1024px) {
-         padding: 0.85rem 1.5rem;
-         font-size: 1.15rem;
+         padding: 0.75rem 1rem;
+         font-size: 1rem;
       }
    }
 
    .logo, .date {
-      font-weight: 700;
+      font-weight: 800;
    }
 
    

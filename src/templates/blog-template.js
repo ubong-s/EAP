@@ -33,7 +33,7 @@ const blogTemplate = ({ data, pageContext }) => {
               </ImageWrap>
               <h2>{title}</h2>
               <ReactMarkdown children={content} />
-              <PostNavigator pageContext={pageContext} />
+              <PostNavigator pageContext={pageContext} subLink="blog" />
             </article>
           </BlogContent>
           <BlogSidebar />

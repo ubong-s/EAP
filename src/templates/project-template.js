@@ -7,7 +7,7 @@ import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import PageHero from "../components/PageHero"
 import ProjectsSidebar from "../components/ProjectsSidebar"
-import { ProjectNavigator } from "../components/ProjectNavigator"
+import { PostNavigator } from "../components/PostNavigator"
 import CallToAction from "../components/CallToAction"
 
 const projectTemplate = ({ data, pageContext }) => {
@@ -68,7 +68,7 @@ const projectTemplate = ({ data, pageContext }) => {
                   })}
                 </GalleryGrid>
               </Gallery>
-              <ProjectNavigator pageContext={pageContext} />
+              <PostNavigator pageContext={pageContext} subLink="projects" />
             </article>
           </ProjectContent>
           <ProjectsSidebar />

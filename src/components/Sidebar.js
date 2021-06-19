@@ -121,6 +121,7 @@ const SidebarList = styled.ul`
     margin: 1rem 0;
     font-size: 1rem;
     font-family: ${theme.fontPrimary};
+    font-weight: 700;
     text-transform: capitalize;
 
     a {

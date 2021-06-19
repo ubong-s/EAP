@@ -16,8 +16,8 @@ const Service = ({ strapiId, title, image, description, slug }) => {
         <div className="services-card">
           <h4>{title}</h4>
           <p>
-            {`${description}`.substring(0, 125)}
-            <span className="more">read more</span>
+            {`${description}`.substring(0, 125)}...
+            <span className="more">Read more</span>
           </p>
         </div>
       </article>
@@ -55,6 +55,8 @@ const ServiceLink = styled(Link)`
     .more {
       margin-left: 0.25rem;
       color: ${theme.primaryColor};
+      font-weight: 700;
+      text-transform: capitalize;
     }
   }
 

@@ -104,6 +104,7 @@ export const FooterContainer = styled.footer`
   .phone {
     font-size: 1.25rem;
     color: ${theme.primaryColor};
+    font-weight: 800;
 
     &:hover {
       color: ${theme.accentColor};
@@ -167,6 +168,7 @@ export const FooterContainer = styled.footer`
         color: ${theme.primaryColor};
         cursor: pointer;
         text-transform: capitalize;
+        font-weight: 800;
 
         &:hover {
           opacity: 0.5;
@@ -182,6 +184,7 @@ export const FooterContainer = styled.footer`
 
   .developer {
     font-family: ${theme.fontPrimary};
+    font-weight: 800;
 
     a {
       color: ${theme.primaryColor};

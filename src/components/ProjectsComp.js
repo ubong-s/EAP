@@ -5,12 +5,6 @@ import Project from "./Project"
 import { theme } from "../styles/theme"
 
 const ProjectsComp = ({ projects, pageContext }) => {
-  const { currentPage, projectsPages } = pageContext
-
-  const isFirst = currentPage === 1
-  const isLast = currentPage === projectsPages
-  const prevPage = currentPage - 1 === 1 ? "" : (currentPage - 1).toString()
-  const nextPage = (currentPage + 1).toString()
   return (
     <div className="container">
       <ProjectsContainer>
@@ -19,18 +13,6 @@ const ProjectsComp = ({ projects, pageContext }) => {
             return <Project {...project} />
           })}
         </ProjectsGrid>
-        <ProjectsListNav>
-          {!isFirst && (
-            <Link to={`/projects/${prevPage}`} rel="prev">
-              ← Previous Page
-            </Link>
-          )}
-          {!isLast && (
-            <Link to={`/projects/${nextPage}`} rel="next">
-              Next Page →
-            </Link>
-          )}
-        </ProjectsListNav>
       </ProjectsContainer>
     </div>
   )
@@ -39,6 +21,8 @@ const ProjectsComp = ({ projects, pageContext }) => {
 export default ProjectsComp
 
 const ProjectsContainer = styled.section`
+  /* padding-bottom: rem; */
+
   @media screen and (min-width: 1024px) {
   }
 `
@@ -53,24 +37,5 @@ const ProjectsGrid = styled.div`
   }
   @media screen and (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
-  }
-`
-const ProjectsListNav = styled.div`
-  margin-top: 3rem;
-
-  a {
-    display: inline-block;
-    margin-bottom: 1rem;
-    margin-right: 1rem;
-    background: ${theme.primaryColor};
-    color: ${theme.themeWhite};
-    padding: 0.7rem 1rem;
-    font-size: 12px;
-
-    &:hover {
-      background: ${theme.accentColor};
-      color: ${theme.primaryColor};
-      transition: ${theme.transitionEase};
-    }
   }
 `

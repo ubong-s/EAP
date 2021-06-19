@@ -61,7 +61,7 @@ const ProjectLink = styled(Link)`
 
   h4 {
     position: absolute;
-    font-size: 1rem;
+    font-size: 1.25rem;
     left: 1.25rem;
     bottom: 1rem;
     z-index: 3;

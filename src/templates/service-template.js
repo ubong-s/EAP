@@ -105,6 +105,7 @@ const ServicesSection = styled.section`
       cursor: pointer;
       transition: ${theme.transitionEase};
       font-size: 1rem;
+      font-weight: 800;
 
       &:hover {
         color: ${theme.accentColor};
@@ -152,6 +153,7 @@ const ServicesMenu = styled.div`
       cursor: pointer;
       transition: ${theme.transitionEase};
       font-size: 0.9rem;
+      font-weight: 800;
 
       @media screen and (min-width: 1024px) {
         font-size: 1rem;

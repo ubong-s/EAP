@@ -5,6 +5,7 @@ import Blog from "./Blog"
 import BlogSidebar from "./BlogSidebar"
 import { theme } from "../styles/theme"
 import SectionHeader from "./SectionHeader"
+import MoreBtn from "./MoreBtn"
 
 const HomeBlogComp = ({ blogs }) => {
   return (
@@ -16,12 +17,10 @@ const HomeBlogComp = ({ blogs }) => {
         />
         <BlogsGrid>
           {blogs.map(blog => {
-            return <Blog {...blog} grid={true} />
+            return <Blog {...blog} alt={true} />
           })}
         </BlogsGrid>
-        <Link to="/blog">
-          <button className="btn">Read More</button>
-        </Link>
+        <MoreBtn address="/blog" btnText="View All Blogposts" />
       </BlogsContainer>
     </div>
   )

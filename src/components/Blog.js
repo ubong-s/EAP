@@ -12,12 +12,12 @@ const Blog = ({
   description,
   slug,
   date,
-  grid,
+  alt,
 }) => {
   return (
-    <BlogLink to={`/blog/${slug}`} key={strapiId}>
-      <article>
-        <ImageWrap grid={grid}>
+    <BlogLink to={`/blog/${slug}`} key={strapiId} alt={alt}>
+      <article alt={alt}>
+        <ImageWrap alt={alt}>
           <GatsbyImage
             image={featuredImage.localFile.childImageSharp.gatsbyImageData}
             alt={title}
@@ -51,14 +51,14 @@ const BlogLink = styled(Link)`
 
   article {
     @media screen and (min-width: 768px) {
-      display: ${({ grid }) => (grid ? `block` : "grid")};
-      grid-template-columns: ${({ grid }) => (grid ? `` : "1fr 2fr")};
+      display: ${({ alt }) => (alt ? `block` : "grid")};
+      grid-template-columns: ${({ alt }) => (alt ? `` : "1fr 2fr")};
       gap: 1.5rem;
       align-items: center;
     }
 
     @media screen and (min-width: 1100px) {
-      grid-template-columns: ${({ grid }) => (grid ? `` : "1fr 3fr")};
+      grid-template-columns: ${({ alt }) => (alt ? `` : "1fr 3fr")};
     }
   }
 
@@ -78,10 +78,11 @@ const BlogLink = styled(Link)`
     }
 
     .more {
-      display: ${({ grid }) => (grid ? `1fr 3fr` : "")};
+      display: 1fr 3fr;
       text-transform: capitalize;
       margin-top: 0.5rem;
       color: ${theme.primaryColor};
+      font-weight: 700;
     }
 
     @media screen and (min-width: 768px) {
@@ -115,7 +116,7 @@ const BlogLink = styled(Link)`
 const ImageWrap = styled.div`
   position: relative;
   line-height: 0;
-  margin-bottom: ${({ grid }) => (grid ? `1.5rem` : "")};
+  margin-bottom: ${({ alt }) => (alt ? `1.5rem` : "")};
 
   p {
     position: absolute;
