@@ -11,7 +11,12 @@ const Form = () => {
         with something? Let us know.
       </p>
 
-      <form className="form" id="form">
+      <form
+        className="form"
+        id="form"
+        action="https://formspree.io/f/xpzkpoqw"
+        method="POST"
+      >
         <div className="form-control">
           <label htmlFor="name">First Name</label>
           <input aria-label="name" type="text" id="name" placeholder="Name" />

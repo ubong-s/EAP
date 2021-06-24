@@ -73,6 +73,7 @@ const SidebarWrap = styled.div`
     display: block;
     background-color: ${theme.themeWhite};
     padding: 1.5rem;
+    box-shadow: ${theme.shadow};
   }
 `
 const SidebarArticles = styled.div`
@@ -83,11 +84,11 @@ const SidebarArticles = styled.div`
   .sidebar-link {
     display: block;
     font-size: 0.9rem;
-    color: ${theme.textColor};
+    color: ${theme.primaryColor};
     margin-bottom: 1rem;
 
     &:hover {
-      color: ${theme.primaryColor};
+      color: ${theme.textColor};
     }
   }
 `

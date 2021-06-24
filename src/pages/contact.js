@@ -6,6 +6,7 @@ import Seo from "../components/SEO"
 import styled from "styled-components"
 import Form from "../components/Form"
 import Locations from "../components/Locations"
+import WrappedMap from "../components/Map"
 
 const Contact = () => {
   return (
@@ -19,6 +20,12 @@ const Contact = () => {
           <Form />
         </div>
       </ContactSection>
+      <WrappedMap
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?&key=${process.env.REACT_APP_GOOGLE_KEY}&v=3.exp&libraries=geometry,drawing,places`}
+        loadingElement={<div style={{ height: `100%` }} />}
+        containerElement={<div style={{ height: `500px` }} />}
+        mapElement={<div style={{ height: `100%` }} />}
+      />
     </Layout>
   )
 }

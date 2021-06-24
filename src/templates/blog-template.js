@@ -81,6 +81,7 @@ const BlogWrap = styled.section`
 const BlogContent = styled.div`
   padding: 1.5rem;
   background: ${theme.themeWhite};
+  box-shadow: ${theme.shadow};
 
   h2 {
     margin: 2rem 0 0.5rem;

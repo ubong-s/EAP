@@ -45,6 +45,7 @@ const AboutContent = styled.div`
   padding: 1.5rem;
   box-shadow: ${({ shadow }) => (shadow ? `${theme.shadow}` : ``)};
   background-color: ${({ lightBg }) => (lightBg ? `` : `${theme.themeWhite}`)};
+  box-shadow: ${theme.shadow};
 
   p {
     margin-bottom: 2.5rem;

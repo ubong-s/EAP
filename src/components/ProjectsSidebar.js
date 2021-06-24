@@ -18,6 +18,7 @@ const ProjectsSidebar = () => {
           title
           details
           slug
+          strapiId
         }
       }
     }
@@ -33,7 +34,11 @@ const ProjectsSidebar = () => {
         <h4>Other Projects</h4>
         {data.allStrapiProjects.nodes.map(item => {
           return (
-            <Link to={`/projects/${item.slug}`} className="sidebar-link">
+            <Link
+              to={`/projects/${item.slug}`}
+              key={item.strapiId}
+              className="sidebar-link"
+            >
               {item.title} {">>"}
             </Link>
           )
@@ -68,6 +73,7 @@ const SidebarWrap = styled.div`
     display: block;
     background-color: ${theme.themeWhite};
     padding: 1.5rem;
+    box-shadow: ${theme.shadow};
   }
 `
 const SidebarArticles = styled.div`
@@ -78,11 +84,11 @@ const SidebarArticles = styled.div`
   .sidebar-link {
     display: block;
     font-size: 0.9rem;
-    color: ${theme.textColor};
+    color: ${theme.primaryColor};
     margin-bottom: 1rem;
 
     &:hover {
-      color: ${theme.primaryColor};
+      color: ${theme.textColor};
     }
   }
 `

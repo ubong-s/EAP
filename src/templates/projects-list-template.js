@@ -51,7 +51,7 @@ export const query = graphql`
         featuredImage {
           localFile {
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
+              gatsbyImageData(layout: CONSTRAINED, height: 600)
             }
           }
         }

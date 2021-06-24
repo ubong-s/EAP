@@ -12,15 +12,16 @@ const Blog = ({
   description,
   slug,
   date,
-  alt,
+  altL,
 }) => {
   return (
-    <BlogLink to={`/blog/${slug}`} key={strapiId} alt={alt}>
-      <article alt={alt}>
-        <ImageWrap alt={alt}>
+    <BlogLink to={`/blog/${slug}`} key={strapiId} altL={altL}>
+      <article altL={altL}>
+        <ImageWrap altL={altL}>
           <GatsbyImage
             image={featuredImage.localFile.childImageSharp.gatsbyImageData}
             alt={title}
+            altL={altL}
           />
           <p className="date">{date}</p>
         </ImageWrap>
@@ -48,17 +49,18 @@ export default Blog
 const BlogLink = styled(Link)`
   padding: 1.5rem;
   background-color: ${theme.themeWhite};
+  box-shadow: ${theme.shadow};
 
   article {
     @media screen and (min-width: 768px) {
-      display: ${({ alt }) => (alt ? `block` : "grid")};
-      grid-template-columns: ${({ alt }) => (alt ? `` : "1fr 2fr")};
+      display: ${({ altL }) => (altL ? "block" : "grid")};
+      grid-template-columns: ${({ altL }) => (altL ? "" : "1fr 2fr")};
       gap: 1.5rem;
       align-items: center;
     }
 
     @media screen and (min-width: 1100px) {
-      grid-template-columns: ${({ alt }) => (alt ? `` : "1fr 3fr")};
+      grid-template-columns: ${({ altL }) => (altL ? "" : "1fr 3fr")};
     }
   }
 
@@ -68,7 +70,7 @@ const BlogLink = styled(Link)`
     transition: ${theme.transitionEase};
 
     h4 {
-      margin: 1.25rem 0 0.75rem;
+      /* margin: 1.25rem 0 0.75rem; */
       font-size: 1.25rem;
     }
 
@@ -80,16 +82,9 @@ const BlogLink = styled(Link)`
     .more {
       display: 1fr 3fr;
       text-transform: capitalize;
-      margin-top: 0.5rem;
+      /* margin-top: 0.5rem; */
       color: ${theme.primaryColor};
       font-weight: 700;
-    }
-
-    @media screen and (min-width: 768px) {
-      h4 {
-        margin: 0 0 0.5rem;
-        /* font-size: 1.25rem; */
-      }
     }
   }
 
@@ -116,7 +111,17 @@ const BlogLink = styled(Link)`
 const ImageWrap = styled.div`
   position: relative;
   line-height: 0;
-  margin-bottom: ${({ alt }) => (alt ? `1.5rem` : "")};
+  margin-bottom: ${({ altL }) => (altL ? `1rem` : "0")};
+  height: ${({ altL }) => (altL ? `200px` : "")};
+  overflow: hidden;
+
+  @media screen and (min-width: 1024px) {
+    height: ${({ altL }) => (altL ? `auto` : "")};
+  }
+
+  img {
+    transition: ${theme.transitionEase};
+  }
 
   p {
     position: absolute;
@@ -126,5 +131,12 @@ const ImageWrap = styled.div`
     color: ${theme.primaryColor};
     top: 0;
     left: 0;
+  }
+
+  &:hover {
+    img {
+      transition: ${theme.transitionEase};
+      transform: scale(1.2);
+    }
   }
 `

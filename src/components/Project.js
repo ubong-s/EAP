@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { theme } from "../styles/theme"
+import { FaPlusCircle } from "react-icons/fa"
 
 const Project = ({ strapiId, title, featuredImage, slug }) => {
   return (
@@ -15,7 +16,11 @@ const Project = ({ strapiId, title, featuredImage, slug }) => {
             alt={title}
           />
           <h4>{title}</h4>
+          <FaPlusCircle className="plus-icon" />
         </div>
+        {/* <div className="title">
+          <h3>{title}</h3>
+        </div> */}
       </article>
     </ProjectLink>
   )
@@ -30,17 +35,38 @@ Project.propTypes = {
 export default Project
 
 const ProjectLink = styled(Link)`
+  position: relative;
   text-align: center;
 
   article {
     background-color: ${theme.themeWhite};
     padding: 1.25rem;
+    box-shadow: ${theme.shadow};
   }
 
   .img {
     position: relative;
-
     z-index: 2;
+    overflow: hidden;
+
+    img {
+      transition: ${theme.transitionEase};
+      height: 150px;
+
+      @media screen and (min-width: 1024px) {
+        height: 400px;
+      }
+    }
+
+    .plus-icon {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      font-size: 2rem;
+      color: ${theme.themeWhite};
+      transition: ${theme.transitionEase};
+    }
 
     &::after {
       content: "";
@@ -67,11 +93,39 @@ const ProjectLink = styled(Link)`
     z-index: 3;
     color: ${theme.themeWhite};
     text-align: left;
+    transition: ${theme.transitionEase};
+    padding-right: 1.25rem;
   }
+
+  /* .title {
+    position: absolute;
+    padding: 1.5rem 1rem;
+    background-color: ${theme.themeWhite};
+    left: 50%;
+    bottom: -5%;
+    transform: translateX(-50%);
+    z-index: 3;
+    transition: ${theme.transitionEase};
+
+    h3 {
+      margin-bottom: 0;
+    }
+  } */
 
   &:hover {
     .img {
       transition: ${theme.transitionEase};
+
+      img {
+        transition: ${theme.transitionEase};
+        transform: scale(1.2);
+      }
+
+      .plus-icon {
+        transform: translate(-50%, -50%) scale(1);
+        transition: ${theme.transitionEase};
+      }
+
       &::after {
         background: linear-gradient(
           to bottom,

@@ -11,7 +11,7 @@ export const theme = {
   themeWhite: "#FFF",
   themeDark: "#04150C",
   accentColor: "#FFD03E",
-  transitionEase: "all 0.3s ease-in-out",
+  transitionEase: "all 0.2s linear",
   transitionEase1: "all 0.5s ease-in-out",
   shadow: "5px 5px 20px 0 rgb(0 0 0 / 6%)",
 }

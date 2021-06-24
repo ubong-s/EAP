@@ -26,6 +26,11 @@ const Home = ({ data }) => {
         buttonLink="/contact"
       />
       <Team />
+      <ProjectsComp
+        projects={projects.nodes}
+        allBtn={true}
+        sectionHeader={true}
+      />
       <HomeBlogComp blogs={blogs.nodes} />
       <CallToAction />
     </Layout>
@@ -44,7 +49,7 @@ export const query = graphql`
         featuredImage {
           localFile {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(layout: FULL_WIDTH, height: 350, width: 500)
             }
           }
         }
@@ -73,7 +78,7 @@ export const query = graphql`
         featuredImage {
           localFile {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(layout: CONSTRAINED, height: 600)
             }
           }
         }

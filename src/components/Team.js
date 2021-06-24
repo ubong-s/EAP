@@ -17,7 +17,7 @@ const Team = () => {
           image {
             localFile {
               childImageSharp {
-                gatsbyImageData
+                gatsbyImageData(layout: CONSTRAINED, height: 600)
               }
             }
           }
@@ -98,6 +98,7 @@ const TeamMembers = styled.div`
   article {
     background: ${theme.themeWhite};
     padding: 1.25rem;
+    box-shadow: ${theme.shadow};
 
     .img {
       position: relative;
@@ -127,6 +128,7 @@ const TeamMembers = styled.div`
         left: 1.25rem;
         bottom: 1rem;
         z-index: 3;
+        transition: ${theme.transitionEase1};
 
         h4 {
           color: ${theme.themeWhite};
@@ -177,6 +179,11 @@ const TeamMembers = styled.div`
           opacity: 1;
           transform: translateX(0);
           z-index: 3;
+        }
+
+        .info {
+          bottom: 2rem;
+          transition: ${theme.transitionEase1};
         }
       }
     }

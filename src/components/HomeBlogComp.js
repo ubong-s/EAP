@@ -17,10 +17,10 @@ const HomeBlogComp = ({ blogs }) => {
         />
         <BlogsGrid>
           {blogs.map(blog => {
-            return <Blog {...blog} alt={true} />
+            return <Blog {...blog} altL={true} />
           })}
         </BlogsGrid>
-        <MoreBtn address="/blog" btnText="View All Blogposts" />
+        <MoreBtn address="/blog" btnText="View All Articles" />
       </BlogsContainer>
     </div>
   )

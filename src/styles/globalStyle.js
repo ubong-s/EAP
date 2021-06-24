@@ -27,8 +27,7 @@ export const GlobalStyle = createGlobalStyle`
 
    h1, h2, h3, h4, h5, h6 {
       color: ${theme.primaryColor};
-      letter-spacing: 1px;
-      font-weight:800;
+      font-weight:700;
       margin-bottom: 0.5rem;
    }
    
@@ -99,7 +98,8 @@ export const GlobalStyle = createGlobalStyle`
       transition: ${theme.transitionEase};
       margin-bottom: 0;
       text-transform: capitalize;
-      font-weight: 800;
+      font-weight: 700;
+      box-shadow: ${theme.shadow};
 
       &:hover {
          background:${theme.primaryColor};
@@ -113,7 +113,7 @@ export const GlobalStyle = createGlobalStyle`
    }
 
    .logo, .date {
-      font-weight: 800;
+      font-weight: 700;
    }
 
    
