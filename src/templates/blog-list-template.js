@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import PageHero from "../components/PageHero"
 import BlogHero from "../images/pageHero/blog.jpg"

@@ -6,7 +6,7 @@ import { theme } from "../styles/theme"
 import { FaFacebook, FaTwitter, FaLinkedinIn } from "react-icons/fa"
 import SectionHeader from "./SectionHeader"
 
-const Team = () => {
+const Team = ({ whiteBG }) => {
   const data = useStaticQuery(graphql`
     {
       team: allStrapiTeams(filter: {}, sort: { fields: position }, limit: 4) {
@@ -30,7 +30,7 @@ const Team = () => {
   `)
 
   return (
-    <TeamWrap>
+    <TeamWrap whiteBG={whiteBG}>
       <div className="container">
         <SectionHeader
           title="Our Expert Team"
@@ -88,7 +88,9 @@ const Team = () => {
 
 export default Team
 
-const TeamWrap = styled.section``
+const TeamWrap = styled.section`
+  background-color: ${({ whiteBG }) => (whiteBG ? `${theme.themeWhite}` : "")};
+`
 const TeamMembers = styled.div`
   display: grid;
   gap: 2rem;
@@ -126,18 +128,22 @@ const TeamMembers = styled.div`
       .info {
         position: absolute;
         left: 1.25rem;
+        right: 1.25rem;
         bottom: 1rem;
+        text-align: center;
         z-index: 3;
         transition: ${theme.transitionEase1};
 
         h4 {
           color: ${theme.themeWhite};
           margin-bottom: 0.25rem;
+          font-size: 1.25rem;
         }
 
         h5 {
           color: ${theme.accentColor};
           margin-bottom: 0;
+          font-size: 1rem;
         }
       }
 
@@ -148,7 +154,7 @@ const TeamMembers = styled.div`
         z-index: 0;
         transform: translateX(-100px);
         opacity: 0;
-        transition: ${theme.transitionEase1};
+        transition: ${theme.transitionEase};
 
         li {
           margin-bottom: 0.5rem;

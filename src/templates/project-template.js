@@ -10,7 +10,6 @@ import ProjectsSidebar from "../components/ProjectsSidebar"
 import { PostNavigator } from "../components/PostNavigator"
 import CallToAction from "../components/CallToAction"
 import ProjectImageModal from "../components/ProjectImageModal"
-import { FaPlusCircle } from "react-icons/fa"
 
 const ProjectTemplate = ({ data, pageContext }) => {
   const [modalOpen, setModalOpen] = useState(false)
@@ -199,7 +198,6 @@ const ProjectContent = styled.div`
 const ProjectInfo = styled.div`
   h3 {
     margin: 1rem 0;
-    font-size: 1.25rem;
   }
 `
 

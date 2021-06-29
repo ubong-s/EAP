@@ -21,6 +21,8 @@ module.exports = {
   },
 
   plugins: [
+    `gatsby-plugin-transition-link`,
+    `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -61,6 +63,7 @@ module.exports = {
           `services`,
           `teams`,
           `jobs`,
+          `slides`,
         ],
         // singleTypes: [`home-page`, `contact`],
       },

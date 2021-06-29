@@ -28,13 +28,39 @@ export const GlobalStyle = createGlobalStyle`
    h1, h2, h3, h4, h5, h6 {
       color: ${theme.primaryColor};
       font-weight:700;
+      letter-spacing: 0.5px;
       margin-bottom: 0.5rem;
+      
+   }
+
+   @media screen and (min-width: 1024px) {
+      h1 {
+       font-size: 34px;
+      }
+
+      h2 {
+       font-size: 28px;
+      }
+      
+      h3 {
+       font-size: 25px;
+      }
+
+      h4 {
+       font-size: 22px;
+      }
+
+      h5 {
+       font-size: 18px;
+      }
+
    }
    
    p {
       font-family: ${theme.fontSecondary};
       color: ${theme.textColor};
       margin-bottom: 1rem;
+      line-height: 1.5;
    }
 
    blockquote {
@@ -62,10 +88,11 @@ export const GlobalStyle = createGlobalStyle`
        
       /* @media screen and (min-width: 768px) {
          width: 90%;
-      }
+      } */
       @media screen and (min-width: 1024px) {
          width: 85%;
-      } */
+         max-width: 1400px;
+      } 
    }
 
    img {
@@ -112,8 +139,13 @@ export const GlobalStyle = createGlobalStyle`
       }
    }
 
-   .logo, .date {
+   .logo{
       font-weight: 700;
+   }
+
+   .date {
+      font-weight: 700;
+      line-height: 0;
    }
 
    

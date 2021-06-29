@@ -7,38 +7,56 @@ import CallToAction from "../components/CallToAction"
 import Team from "../components/Team"
 import HomeBlogComp from "../components/HomeBlogComp"
 import ProjectsComp from "../components/ProjectsComp"
+import HomeSlider from "../components/HomeSlider"
+import HomeServices from "../components/HomeServices"
+import HomeBG from "../images/homeSlider/home-slider-5.jpg"
+import Commitment from "../components/Commitment"
 
 const Home = ({ data }) => {
-  const { blogs, services, projects } = data
+  const { blogs, services, projects, slides } = data
+
   return (
     <Layout>
       <Seo title="Home" description="This is our Home page" />
-      <h1>Home</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-        excepturi reiciendis. Accusantium porro culpa minima tempora qui maxime
-      </p>
+      <HomeSlider slides={slides.nodes} />
       <AboutSection
-        // img={AboutHero}
+        img={HomeBG}
         title={`We're Building Everything!`}
         content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ab! Sint animi similique adipisci facere nostrum illo id et, repellendus vitae odit placeat, quidem debitis numquam quisquam aut iure cumque suscipit voluptate. Vitae alias animi voluptatum dicta, ullam magni, sapiente labore sit, quo nobis ut ab ex nesciunt assumenda consectetur? Eius magni animi id provident alias, quis temporibus quas vitae?"
         buttonLabel="Find Out More"
         buttonLink="/contact"
+        imgEnd={true}
+        shadow={false}
       />
+      <HomeServices services={services.nodes} />
       <Team />
+      <Commitment />
       <ProjectsComp
         projects={projects.nodes}
         allBtn={true}
         sectionHeader={true}
       />
       <HomeBlogComp blogs={blogs.nodes} />
-      <CallToAction />
+      <CallToAction backgroundImg={HomeBG} />
     </Layout>
   )
 }
 
 export const query = graphql`
   {
+    slides: allStrapiSlides {
+      nodes {
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+        }
+        title
+        description
+      }
+    }
     blogs: allStrapiBlogs(limit: 3, sort: { order: DESC, fields: date }) {
       nodes {
         strapiId

@@ -89,28 +89,26 @@ const ProjectLink = styled(Link)`
     position: absolute;
     font-size: 1.25rem;
     left: 1.25rem;
-    bottom: 1rem;
+    right: 1.25rem;
+    bottom: 0.5rem;
     z-index: 3;
     color: ${theme.themeWhite};
     text-align: left;
     transition: ${theme.transitionEase};
-    padding-right: 1.25rem;
-  }
+    padding: 0.75rem;
 
-  /* .title {
-    position: absolute;
-    padding: 1.5rem 1rem;
-    background-color: ${theme.themeWhite};
-    left: 50%;
-    bottom: -5%;
-    transform: translateX(-50%);
-    z-index: 3;
-    transition: ${theme.transitionEase};
-
-    h3 {
-      margin-bottom: 0;
+    @media screen and (min-width: 1024px) {
+      text-align: center;
+      background: ${theme.themeWhite};
+      color: ${theme.primaryColor};
     }
-  } */
+
+    &:hover {
+      @media screen and (min-width: 1024px) {
+        background: ${theme.accentColor};
+      }
+    }
+  }
 
   &:hover {
     .img {
@@ -133,6 +131,13 @@ const ProjectLink = styled(Link)`
           rgba(255, 255, 255, 0),
           rgba(0, 0, 0, 0.8)
         );
+      }
+
+      h4 {
+        @media screen and (min-width: 1024px) {
+          bottom: 2rem;
+          transition: ${theme.transitionEase};
+        }
       }
     }
   }

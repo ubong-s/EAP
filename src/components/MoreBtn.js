@@ -15,6 +15,9 @@ const MoreBtn = ({ address, btnText }) => {
 export default MoreBtn
 
 const BtnWrap = styled.div`
-  margin-top: 4rem;
-  text-align: center;
+  margin-top: 2.5rem;
+
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
 `

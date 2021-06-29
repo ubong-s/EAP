@@ -2,16 +2,16 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { theme } from "../styles/theme"
+import AboutHero from "../images/pageHero/about.jpg"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const AboutSection = ({
   lightBg,
   title,
   content,
-  listItems,
   buttonLabel,
   buttonLink,
   img,
-  alt,
   imgEnd,
   shadow,
 }) => {
@@ -20,14 +20,14 @@ const AboutSection = ({
       <div className="container">
         <AboutContent imgEnd={imgEnd} lightBg={lightBg} shadow={shadow}>
           <div className="img">
-            <img src={img} alt={title} />
+            <img src={img ? img : AboutHero} alt={title} />
           </div>
           <div className="content">
             <h2>{title}</h2>
             <p>{content}</p>
-            <Link to={buttonLink}>
+            <AniLink to={buttonLink} fade duration={0.2}>
               <button className="btn">{buttonLabel}</button>
-            </Link>
+            </AniLink>
           </div>
         </AboutContent>
       </div>
@@ -42,10 +42,19 @@ const AboutWrap = styled.section`
 `
 
 const AboutContent = styled.div`
-  padding: 1.5rem;
-  box-shadow: ${({ shadow }) => (shadow ? `${theme.shadow}` : ``)};
-  background-color: ${({ lightBg }) => (lightBg ? `` : `${theme.themeWhite}`)};
-  box-shadow: ${theme.shadow};
+  display: grid;
+  gap: 3rem;
+
+  .img {
+    padding: 1.5rem;
+    background-color: ${theme.themeWhite};
+    box-shadow: ${theme.shadow};
+    line-height: 0;
+
+    img {
+      margin-bottom: 0;
+    }
+  }
 
   p {
     margin-bottom: 2.5rem;

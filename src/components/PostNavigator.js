@@ -52,6 +52,7 @@ const Navigator = styled.ul`
     color: ${theme.themeWhite};
     padding: 0.7rem 1rem;
     font-size: 14px;
+    font-weight: 600;
 
     &:hover {
       background: ${theme.accentColor};

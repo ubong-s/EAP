@@ -1,8 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import Project from "./Project"
-import { theme } from "../styles/theme"
 import SectionHeader from "./SectionHeader"
 import MoreBtn from "./MoreBtn"
 
@@ -14,6 +12,8 @@ const ProjectsComp = ({ projects, allBtn, sectionHeader }) => {
           <SectionHeader
             title="Latest Projects"
             description="Enim nulla rem labore, omnis similique id, unde sint officiis voluptates at beatae. Laudantium dolore accusantium tenetur accusamus."
+            pageLink="/projects"
+            linkText="View All Projects"
           />
         )}
         <ProjectsGrid>

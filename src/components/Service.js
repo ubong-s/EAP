@@ -44,7 +44,6 @@ const ServiceLink = styled(Link)`
 
     h4 {
       margin: 1.25rem 0 0.75rem;
-      font-size: 1.25rem;
     }
 
     p {

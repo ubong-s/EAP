@@ -70,8 +70,12 @@ const BlogLink = styled(Link)`
     transition: ${theme.transitionEase};
 
     h4 {
-      /* margin: 1.25rem 0 0.75rem; */
+      margin-top: 1rem;
       font-size: 1.25rem;
+
+      @media screen and (min-width: 1024px) {
+        margin-top: 0;
+      }
     }
 
     p {

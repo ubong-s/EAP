@@ -83,12 +83,11 @@ const SidebarArticles = styled.div`
 
   .sidebar-link {
     display: block;
-    font-size: 0.9rem;
-    color: ${theme.primaryColor};
     margin-bottom: 1rem;
+    color: ${theme.textColor};
 
     &:hover {
-      color: ${theme.textColor};
+      color: ${theme.primaryColor};
     }
   }
 `

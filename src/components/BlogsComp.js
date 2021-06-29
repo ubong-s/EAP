@@ -1,9 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import Blog from "./Blog"
 import BlogSidebar from "./BlogSidebar"
-import { theme } from "../styles/theme"
 
 const BlogsComp = ({
   blogs,

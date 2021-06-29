@@ -6,7 +6,7 @@ import { RiBuilding2Line } from "react-icons/ri"
 import styled from "styled-components"
 // import { MenuData } from "../constants"
 
-const Navbar = ({ toggleMenu, clickMenu, scrollNav }) => {
+const Navbar = ({ clickMenu, scrollNav }) => {
   return (
     <Header scrollNav={scrollNav}>
       <div className="container">

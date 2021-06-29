@@ -1,9 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import Blog from "./Blog"
-import BlogSidebar from "./BlogSidebar"
-import { theme } from "../styles/theme"
 import SectionHeader from "./SectionHeader"
 import MoreBtn from "./MoreBtn"
 
@@ -14,6 +11,8 @@ const HomeBlogComp = ({ blogs }) => {
         <SectionHeader
           title="Latest Articles"
           description="Ab placeat, obcaecati molestiae id libero at voluptatem voluptatibus quo eum veniam quos officiis, laborum itaque voluptates pariatur ratione soluta fugiat!"
+          pageLink="/blog"
+          linkText="View All Articles"
         />
         <BlogsGrid>
           {blogs.map(blog => {

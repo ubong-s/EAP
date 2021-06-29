@@ -1,11 +1,21 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
-const SectionHeader = ({ title, description }) => {
+const SectionHeader = ({ title, description, pageLink, linkText }) => {
   return (
     <SectionHeaderWrap>
-      <h2>{title}</h2>
-      <p>{description}</p>
+      <div className="content">
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
+      {pageLink && (
+        <div className="btn-div">
+          <Link to={pageLink}>
+            <button className="btn">{linkText}</button>
+          </Link>
+        </div>
+      )}
     </SectionHeaderWrap>
   )
 }
@@ -13,14 +23,27 @@ const SectionHeader = ({ title, description }) => {
 export default SectionHeader
 
 const SectionHeaderWrap = styled.div`
-  text-align: center;
+  /* text-align: center; */
   padding: 1rem 0 2rem;
+
+  .btn-div {
+    display: none;
+    justify-self: end;
+  }
 
   @media screen and (min-width: 768px) {
     width: 80%;
-    margin: 0 auto;
   }
+
   @media screen and (min-width: 1024px) {
-    width: 50%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    .btn-div {
+      display: block;
+      justify-self: end;
+    }
   }
 `

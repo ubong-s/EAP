@@ -19,7 +19,13 @@ const Form = () => {
       >
         <div className="form-control">
           <label htmlFor="name">First Name</label>
-          <input aria-label="name" type="text" id="name" placeholder="Name" />
+          <input
+            aria-label="name"
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Name"
+          />
           <small>error message</small>
         </div>
         <div className="form-control">
@@ -27,6 +33,7 @@ const Form = () => {
           <input
             aria-label="email"
             type="email"
+            name="email"
             id="email"
             placeholder="Email Address"
           />
@@ -38,6 +45,7 @@ const Form = () => {
             aria-label="subject"
             type="text"
             id="subject"
+            name="subject"
             placeholder="Subject"
           />
           <small>error message</small>
@@ -46,6 +54,7 @@ const Form = () => {
           <label htmlFor="message">message</label>
           <textarea
             aria-label="message"
+            name="message"
             id="message"
             cols="30"
             rows="5"
