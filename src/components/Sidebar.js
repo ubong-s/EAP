@@ -88,7 +88,7 @@ const SidebarInner = styled.div`
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%;
+  width: 75%;
   transition: all 0.4s ease;
   z-index: 1000;
 
@@ -119,7 +119,7 @@ const SidebarInner = styled.div`
 const SidebarList = styled.ul`
   li {
     margin: 1rem 0;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-family: ${theme.fontPrimary};
     font-weight: 700;
     text-transform: capitalize;
@@ -149,7 +149,7 @@ const SidebarList = styled.ul`
 
       li {
         margin: 0.5rem 0;
-        font-size: 0.9rem;
+        font-size: 1rem;
 
         a {
           color: ${theme.accentColor};
@@ -170,18 +170,18 @@ const SidebarList = styled.ul`
 
 const SocialList = styled.ul`
   display: flex;
-
   margin-top: 2rem;
 
   li {
-    font-size: 2rem;
-    margin-right: 1rem;
+    font-size: 1.5rem;
+    margin-right: 1.25rem;
 
     a {
-      color: ${theme.primaryColor};
+      color: ${theme.themeWhite};
       transition: ${theme.transitionEase};
 
       &:hover {
+        color: ${theme.accentColor};
         color: ${theme.transitionEase};
       }
     }

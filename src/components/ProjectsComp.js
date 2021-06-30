@@ -16,7 +16,12 @@ const ProjectsComp = ({ projects, allBtn, sectionHeader }) => {
             linkText="View All Projects"
           />
         )}
-        <ProjectsGrid>
+        <ProjectsGrid
+          data-sal="slide-up"
+          data-sal-duration="10000ms"
+          data-sal-delay="300"
+          data-sal-easing="ease-out-sine"
+        >
           {projects.map(project => {
             return <Project {...project} />
           })}

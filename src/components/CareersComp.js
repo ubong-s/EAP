@@ -1,18 +1,11 @@
 import React from "react"
 import Career from "./Career"
-import SectionHeader from "./SectionHeader"
 import styled from "styled-components"
 
 const CareersComp = ({ jobs }) => {
   return (
     <div className="container">
       <section>
-        <SectionHeader
-          title="Check our open positions"
-          description=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem
-          provident quia cupiditate pariatur dolorum consequuntur voluptates
-          earum optio ipsa ratione."
-        />
         <CareersGrid>
           {jobs.map(job => {
             return <Career {...job} />

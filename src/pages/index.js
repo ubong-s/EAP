@@ -24,7 +24,7 @@ const Home = ({ data }) => {
         title={`We're Building Everything!`}
         content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ab! Sint animi similique adipisci facere nostrum illo id et, repellendus vitae odit placeat, quidem debitis numquam quisquam aut iure cumque suscipit voluptate. Vitae alias animi voluptatum dicta, ullam magni, sapiente labore sit, quo nobis ut ab ex nesciunt assumenda consectetur? Eius magni animi id provident alias, quis temporibus quas vitae?"
         buttonLabel="Find Out More"
-        buttonLink="/contact"
+        buttonLink="/about"
         imgEnd={true}
         shadow={false}
       />

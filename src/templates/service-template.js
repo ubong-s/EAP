@@ -108,7 +108,7 @@ const ServicesSection = styled.section`
       font-weight: 800;
 
       &:hover {
-        color: ${theme.accentColor};
+        color: ${theme.textColor};
       }
 
       span {

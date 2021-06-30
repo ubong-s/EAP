@@ -5,11 +5,33 @@ import { theme } from "../styles/theme"
 
 const CallToAction = ({ title, buttonText, backgroundImg }) => {
   return (
-    <CallWrap backgroundImg={backgroundImg}>
+    <CallWrap
+      backgroundImg={backgroundImg}
+      data-sal="slide-up"
+      data-sal-duration="5000ms"
+      data-sal-delay="300"
+      data-sal-easing="ease-out-sine"
+    >
       <div className="container">
         <CallContent>
-          <h3 className="title">{title ? title : "In need of our services"}</h3>
-          <Link to="/contact" className="btn">
+          <h3
+            className="title"
+            data-sal="fade"
+            data-sal-duration="10000ms"
+            data-sal-delay="500"
+            data-sal-easing="ease-out-sine"
+          >
+            {title ? title : "In need of our services"}
+          </h3>
+          <Link
+            to="/contact"
+            className="btn"
+            lassName="title"
+            data-sal="fade"
+            data-sal-duration="10000ms"
+            data-sal-delay="700"
+            data-sal-easing="ease-out-sine"
+          >
             {buttonText ? buttonText : "Contact Us"}
           </Link>
         </CallContent>

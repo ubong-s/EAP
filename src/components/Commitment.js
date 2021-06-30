@@ -7,12 +7,29 @@ import patternBG from "../images/pattern.jpg"
 const Commitment = () => {
   return (
     <CommitWrap>
-      <div className="green-bg"></div>
+      <div
+        className="green-bg"
+        data-sal="slide-right"
+        data-sal-duration="10000ms"
+        data-sal-delay="300"
+        data-sal-easing="ease-out-sine"
+      ></div>
       <div className="container">
-        <div className="img">
+        <div
+          className="img"
+          data-sal="slide-left"
+          data-sal-duration="12000ms"
+          data-sal-delay="500"
+          data-sal-easing="ease-out-sine"
+        >
           <img src={commitBG} alt="commitment" />
         </div>
-        <CommitContent>
+        <CommitContent
+          data-sal="fade"
+          data-sal-duration="12000ms"
+          data-sal-delay="500"
+          data-sal-easing="ease-out-sine"
+        >
           <h2>Our Commitment</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores

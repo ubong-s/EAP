@@ -36,6 +36,7 @@ const CareerWrap = styled.article`
     background-color: ${theme.accentColor};
     padding: 0.25rem 0.75rem;
     margin-bottom: 1rem;
+    line-height: 1.6;
 
     @media screen and (min-width: 1024px) {
       right: unset;

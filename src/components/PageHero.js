@@ -4,9 +4,22 @@ import { theme } from "../styles/theme"
 
 const PageHero = ({ title, backgroundImg }) => {
   return (
-    <PageHeroWrapper backgroundImg={backgroundImg}>
+    <PageHeroWrapper
+      backgroundImg={backgroundImg}
+      data-sal="slide-down"
+      data-sal-duration="5000ms"
+      data-sal-delay="300"
+      data-sal-easing="ease-out-sine"
+    >
       <div className="container">
-        <h1>{title}</h1>
+        <h1
+          data-sal="fade"
+          data-sal-duration="10000ms"
+          data-sal-delay="500"
+          data-sal-easing="ease-out-sine"
+        >
+          {title}
+        </h1>
       </div>
     </PageHeroWrapper>
   )

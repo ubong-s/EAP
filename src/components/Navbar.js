@@ -52,7 +52,6 @@ const Header = styled.header`
     left: 0;
     width: 80px;
     height: 100vh;
-    /* background-color: transparent; */
   }
 `
 const Nav = styled.nav`

@@ -14,7 +14,12 @@ const HomeBlogComp = ({ blogs }) => {
           pageLink="/blog"
           linkText="View All Articles"
         />
-        <BlogsGrid>
+        <BlogsGrid
+          data-sal="slide-up"
+          data-sal-duration="10000ms"
+          data-sal-delay="300"
+          data-sal-easing="ease-out-sine"
+        >
           {blogs.map(blog => {
             return <Blog {...blog} altL={true} />
           })}

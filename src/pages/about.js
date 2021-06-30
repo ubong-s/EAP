@@ -15,9 +15,8 @@ const About = () => {
       <AboutSection
         img={AboutHero}
         title={`We're Building Everything!`}
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ab! Sint animi similique adipisci facere nostrum illo id et, repellendus vitae odit placeat, quidem debitis numquam quisquam aut iure cumque suscipit voluptate. Vitae alias animi voluptatum dicta, ullam magni, sapiente labore sit, quo nobis ut ab ex nesciunt assumenda consectetur? Eius magni animi id provident alias, quis temporibus quas vitae?"
+        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ab! Sint animi similique adipisci facere nostrum illo id et, repellendus vitae odit placeat, quidem debitis numquam quisquam aut iure cumque suscipit voluptate. Vitae alias animi voluptatum dicta, ullam magni, sapiente labore sit, quo nobis ut ab ex nesciunt assumenda consectetur? Eius magni animi id provident alias, quis temporibus quas vitae. Blanditiis at unde fugit provident velit consequuntur repudiandae consequatur cum nobis error, autem reprehenderit laudantium voluptas amet."
         buttonLabel="Find Out More"
-        buttonLink="/contact"
       />
       <AboutSection
         img={AboutHero}

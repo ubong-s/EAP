@@ -50,7 +50,13 @@ const Team = ({ whiteBG }) => {
               linkedIn,
             } = item
             return (
-              <article key={strapiId}>
+              <article
+                key={strapiId}
+                data-sal="fade"
+                data-sal-duration="2000ms"
+                data-sal-delay="300"
+                data-sal-easing="ease"
+              >
                 <div className="img">
                   <GatsbyImage
                     image={image.localFile.childImageSharp.gatsbyImageData}

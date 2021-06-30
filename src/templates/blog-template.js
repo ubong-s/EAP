@@ -68,6 +68,7 @@ export default blogTemplate
 
 const BlogWrap = styled.section`
   @media screen and (min-width: 768px) {
+    position: relative;
     display: grid;
     grid-template-columns: 3fr 1.25fr;
     gap: 2rem;

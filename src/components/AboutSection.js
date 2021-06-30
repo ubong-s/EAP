@@ -3,7 +3,6 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { theme } from "../styles/theme"
 import AboutHero from "../images/pageHero/about.jpg"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const AboutSection = ({
   lightBg,
@@ -19,15 +18,29 @@ const AboutSection = ({
     <AboutWrap lightBg={lightBg}>
       <div className="container">
         <AboutContent imgEnd={imgEnd} lightBg={lightBg} shadow={shadow}>
-          <div className="img">
+          <div
+            className="img"
+            data-sal="slide-left"
+            data-sal-duration="5000ms"
+            data-sal-delay="300"
+            data-sal-easing="ease-out-bounce"
+          >
             <img src={img ? img : AboutHero} alt={title} />
           </div>
-          <div className="content">
+          <div
+            className="content"
+            data-sal="slide-right"
+            data-sal-duration="10000ms"
+            data-sal-delay="500"
+            data-sal-easing="ease-out-bounce"
+          >
             <h2>{title}</h2>
             <p>{content}</p>
-            <AniLink to={buttonLink} fade duration={0.2}>
-              <button className="btn">{buttonLabel}</button>
-            </AniLink>
+            {buttonLink && (
+              <Link to={buttonLink}>
+                <button className="btn">{buttonLabel}</button>
+              </Link>
+            )}
           </div>
         </AboutContent>
       </div>

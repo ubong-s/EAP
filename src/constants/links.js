@@ -38,8 +38,8 @@ const MenuLinks = [
         url: "/services/urban-development",
       },
       {
-        text: "water",
-        url: "/services/water",
+        text: "water engineering",
+        url: "/services/water-engineering",
       },
     ],
   },
@@ -57,12 +57,18 @@ const MenuLinks = [
   },
   {
     id: 6,
+    text: "careers",
+    url: "/careers/",
+    icon: null,
+  },
+  {
+    id: 7,
     text: "partners",
     url: "/partners/",
     icon: null,
   },
   {
-    id: 7,
+    id: 8,
     text: "contact",
     url: "/contact/",
     icon: null,

@@ -160,7 +160,7 @@ const SliderContainer = styled.section`
       background: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0.7)
+        rgba(0, 0, 0, 0.9)
       );
       z-index: 1;
     }
