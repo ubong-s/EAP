@@ -26,6 +26,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     {
@@ -89,20 +90,6 @@ module.exports = {
         display: "swap",
       },
     },
-    {
-      resolve: "gatsby-plugin-sitemap",
-      options: {
-        query: `
-          {
-            allSitePage {
-              nodes {
-                path
-              }
-            }
-        
-        `,
-        resolveSiteUrl: () => siteUrl,
-      },
-    },
+   
   ],
 }

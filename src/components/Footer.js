@@ -184,13 +184,13 @@ export const FooterContainer = styled.footer`
 
   .developer {
     font-family: ${theme.fontPrimary};
-    font-weight: 800;
+    font-weight: 400;
 
     a {
       color: ${theme.primaryColor};
 
       &:hover {
-        color: ${theme.accentColor};
+        color: ${theme.textColor};
       }
     }
   }

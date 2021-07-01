@@ -148,5 +148,31 @@ export const GlobalStyle = createGlobalStyle`
       line-height: 0;
    }
 
-   
+   .to-top {
+   cursor: pointer;
+   position: fixed;
+   display: grid;
+   place-items: center;
+   background-color: ${theme.primaryColor};
+   color: #fff;
+   width: 40px;
+   height: 40px;
+   bottom: 10%;
+   right: 4%;
+   border-radius: 50%;
+   transition: all 0.3s ease-in-out;
+   visibility: hidden;
+   opacity: 0;
+   z-index: 999;
+   }
+
+   .to-top:hover {
+   background-color: ${theme.accentColor};
+   color: ${theme.primaryColor};
+   }
+
+   .to-top.active {
+   visibility: visible;
+   opacity: 1;
+   }
 `

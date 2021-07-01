@@ -5,6 +5,7 @@ import Navbar from "./Navbar"
 import { GlobalStyle } from "../styles/globalStyle"
 import Sidebar from "./Sidebar"
 import { motion, AnimatePresence } from "framer-motion"
+import BackToTop from "./BackToTop"
 
 const duration = 0.5
 
@@ -55,6 +56,7 @@ const Layout = ({ children }) => {
         scrollNav={scrollNav}
         toggleMenu={toggleMenu}
       />
+      <BackToTop />
       <Sidebar toggleMenu={toggleMenu} closeMenu={closeMenu} />
       <AnimatePresence>
         <motion.main
